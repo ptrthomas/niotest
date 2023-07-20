@@ -9,7 +9,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
         <maven.compiler.version>3.6.0</maven.compiler.version>
+        <karate.version>1.4.1.RC2</karate.version>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-core</artifactId>
+            <version>${karate.version}</version>
+        </dependency>                                 		
+    </dependencies>    
     <build>
         <plugins>
             <plugin>

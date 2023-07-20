@@ -1,5 +1,6 @@
 package pkg;
 
+import com.intuit.karate.job.JobUtils;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -16,7 +17,8 @@ public class Main {
         System.out.println("args: " + Arrays.asList(args));
         File src = new File(args[0]);
         File dest = new File(args[1]);
-        zip(src, dest);
+        // zip(src, dest);
+        JobUtils.zip(src, dest);
         System.out.println("done: " + dest.getAbsolutePath());
     }
     
