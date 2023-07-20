@@ -114,11 +114,10 @@ public class TodoPerfJobConfig extends JobConfigBase<Integer> {
             }
         }
         System.out.println("using worker node count: " + count);
-        TodoPerfJobConfig config = new TodoPerfJobConfig(count, "localhost", 8090);
         String jobId = System.currentTimeMillis() + "";
         String basePath = FileUtils.getBuildDir() + File.separator + jobId;
         File ZIP_FILE = new File(basePath + ".zip");
-        JobUtils.zip(new File("."), ZIP_FILE);        
+        Main.zip(new File(""), ZIP_FILE);        
         
 //        JobManager manager = new JobManager(config);
 //        manager.start();
