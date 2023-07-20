@@ -116,9 +116,9 @@ public class TodoPerfJobConfig extends JobConfigBase<Integer> {
         System.out.println("using worker node count: " + count);
         TodoPerfJobConfig config = new TodoPerfJobConfig(count, "localhost", 8090);
         JobManager manager = new JobManager(config);
-        manager.start();
-        manager.waitForCompletion();
-        manager.server.stop();
+//        manager.start();
+//        manager.waitForCompletion();
+//        manager.server.stop();
         logger.debug("waiting for server shutdown ...");
     }
 
