@@ -26,7 +26,7 @@ public class Main {
         try {
             FileOutputStream fos = new FileOutputStream(dest);
             ZipOutputStream zipOut = new ZipOutputStream(fos);
-            zip(src.getAbsoluteFile(), "", zipOut, 0);
+            zip(src, "", zipOut, 0);
             zipOut.close();
             fos.close();
         } catch (IOException e) {
@@ -35,6 +35,7 @@ public class Main {
     }
 
     private static void zip(File fileToZip, String fileName, ZipOutputStream zipOut, int level) throws IOException {
+        System.out.println("*** file to zip: " + fileToZip);
         if (fileToZip.isHidden()) {
             return;
         }
@@ -58,7 +59,7 @@ public class Main {
         }
         ZipEntry zipEntry = new ZipEntry(fileName);
         zipOut.putNextEntry(zipEntry);
-        RandomAccessFile reader = new RandomAccessFile(fileToZip.getAbsolutePath(), "r");
+        RandomAccessFile reader = new RandomAccessFile(fileToZip, "r");
         FileChannel fc = reader.getChannel();
         int bufferSize = 1024;
         if (bufferSize > fc.size()) {
