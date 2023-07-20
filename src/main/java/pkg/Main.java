@@ -24,10 +24,9 @@ public class Main {
     
     public static void zip(File src, File dest) {
         try {
-            src = src.getCanonicalFile();
             FileOutputStream fos = new FileOutputStream(dest);
             ZipOutputStream zipOut = new ZipOutputStream(fos);
-            zip(src, "", zipOut, 0);
+            zip(src.getAbsoluteFile(), "", zipOut, 0);
             zipOut.close();
             fos.close();
         } catch (IOException e) {
